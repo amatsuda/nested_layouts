@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../../../../test/test_helper'
 
-ActionView::Base.send :include ActionView::Helpers::NestedLayoutsHelper
+ActionView::Base.send :include, ActionView::Helpers::NestedLayoutsHelper
 
 class TestController < ActionController::Base
   layout 'inner'
