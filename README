@@ -1,0 +1,17 @@
+NestedLayouts
+=============
+
+Plugin allows to specify outer layouts for particular layout thus creating nested layouts.
+
+
+Download
+========
+
+Download it from http://rubyforge.org/projects/nested-layouts/ or via Rails plugin script:
+./script/plugin source svn://rubyforge.org/var/svn/nested-layouts/trunk
+./script/plugin install nested_layouts
+
+Bugs & Feedback
+===============
+
+If you encounter any bugs or has some feature proposal, feel free to email it to maxim.kulkin@gmail.com.
