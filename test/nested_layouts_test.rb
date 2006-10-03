@@ -22,6 +22,11 @@ class TestController < ActionController::Base
   def content_for_passing
     render :layout => 'content_for_inner'
   end
+
+  def inline_layout
+    @inline_layout = '<outer><%= yield %></outer>'
+    render :layout => 'inline_inner'
+  end
 end
 
 TestController.template_root = File.dirname(__FILE__) + '/fixtures'
@@ -60,5 +65,10 @@ class NestedLayoutsTest < Test::Unit::TestCase
   def test_data_passing_to_outer_layout_through_content_for
     get :content_for_passing
     assert_equal "<outer data_before='123' data_inside='456'><inner>content_for passing</inner></outer>", @response.body
+  end
+
+  def test_inline_layout
+    get :inline_layout
+    assert_equal "<outer><inner>data</inner></outer>", @response.body
   end
 end

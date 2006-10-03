@@ -9,7 +9,26 @@ module ActionView #:nodoc:
       # ('app/views/' by default).
       def inside_layout(layout, &block)
         layout = layout.include?('/') ? layout : "layouts/#{layout}"
-        concat(@template.render_file(layout, true, '@content_for_layout' => capture(&block)), block.binding)
+        concat(
+          @template.render(
+            :file => layout,
+            :user_full_path => true,
+            :locals => { '@content_for_layout' => capture(&block) }
+          ),
+          block.binding
+        )
+      end
+
+      # Wrap part of the template into inline layout.
+      # Same as +inside_layout+ but takes layout template content rather than layout template name.
+      def inside_inline_layout(template_content, &block)
+        concat(
+          @template.render(
+            :inline => template_content,
+            :locals => { '@content_for_layout' => capture(&block) }
+          ),
+          block.binding
+        )
       end
     end
   end
