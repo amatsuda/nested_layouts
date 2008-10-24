@@ -12,8 +12,7 @@ module ActionView #:nodoc:
         layout = layout.include?('/') ? layout : "layouts/#{layout}"
         @template.instance_variable_set('@content_for_layout', capture(&block))
         concat(
-          @template.render( :file => layout, :use_full_path => true ),
-          block.binding
+          @template.render( :file => layout, :use_full_path => true )
         )
       end
 
@@ -21,7 +20,7 @@ module ActionView #:nodoc:
       # Same as +inside_layout+ but takes layout template content rather than layout template name.
       def inside_inline_layout(template_content, &block)
         @template.instance_variable_set('@content_for_layout', capture(&block))
-        concat( @template.render( :inline => template_content ), block.binding )
+        concat( @template.render( :inline => template_content ) )
       end
     end
   end
