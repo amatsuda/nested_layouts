@@ -8,6 +8,7 @@ module ActionView #:nodoc:
       # it is searched relative to controller's template root directory
       # ('app/views/' by default).
       def inside_layout(layout, &block)
+        layout = layout.to_s
         layout = layout.include?('/') ? layout : "layouts/#{layout}"
         @template.instance_variable_set('@content_for_layout', capture(&block))
         concat(
