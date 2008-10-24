@@ -116,10 +116,11 @@ layouts that are stored in DB:
     <% end %>
 
 
-== Download
+== Installation
 
-Download it from http://rubyforge.org/projects/nested-layouts/ or via Rails plugin script:
-  ./script/plugin install svn://rubyforge.org/var/svn/nested-layouts/trunk/nested_layouts
+  ./script/plugin install git://github.com/amatsuda/nested_layouts.git
+  
+If you prefer a fork of the plugin, replace "amatsuda" with the fork maintainer.
 
 == Bugs & Feedback
 
