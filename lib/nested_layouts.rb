@@ -16,6 +16,7 @@ module ActionView #:nodoc:
           block.binding
         )
       end
+      alias :inside_layout_of :inside_layout
 
       # Wrap part of the template into inline layout.
       # Same as +inside_layout+ but takes layout template content rather than layout template name.
@@ -23,6 +24,7 @@ module ActionView #:nodoc:
         @template.instance_variable_set('@content_for_layout', capture(&block))
         concat( @template.render(:inline => template_content), block.binding)
       end
+      alias :inside_inline_layout_of :inside_inline_layout
     end
   end
 end
