@@ -1,6 +1,15 @@
 = NestedLayouts
 
 Plugin allows to specify outer layouts for particular layout thus creating nested layouts.
+This can support Rails 3, please checkout *rails3* branch.
+
+== Install for Rails 3
+
+  rails plugin install git://github.com/huacnlee/nested_layouts.git -r rails3
+  
+== Install for Rails 2.x
+
+  ruby script/plugin install git://github.com/amatsuda/nested_layouts.git
 
 == Wrapping layout into another layout
 
